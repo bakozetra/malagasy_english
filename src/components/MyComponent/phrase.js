@@ -4,8 +4,8 @@ import { Text, SafeAreaView } from 'react-native';
 // import { styles } from '../constants/globalStyles';
 
 export default function MyComponent({word}) {
-
-  console.log(word);
+ console.log(word);
+ 
   return (
     <SafeAreaView >
       <Text>{word}</Text>
