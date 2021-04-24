@@ -7,8 +7,6 @@
     yarn install
     ```
 
-
-
 # run
 
 Update stories availabe for storybook and run react-native start
