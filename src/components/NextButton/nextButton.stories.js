@@ -3,19 +3,18 @@ import { Alert, View } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import NextButton from './nextButton';
 
-
 storiesOf('NextButton', module)
     .addDecorator(story => <View style={{ alignItems: "center", justifyContent: "center" }}>{story()}</View>)
     .add('Next button', () => (
         <NextButton
-            title="Text"
+            text="Text"
             disabled={false}
             onPress={() => Alert.alert("adding")} />
     ))
 
     .add("Add button", () => (
         <NextButton
-            title="Add"
+            text="Add"
             disabled={false}
             onPress={() => Alert.alert("Adding")}
         />
@@ -23,7 +22,7 @@ storiesOf('NextButton', module)
 
     .add("Add button disable", () => (
         <NextButton
-            title="Add"
+            text="Add"
             disabled={true}
             onPress={() => null}
         />

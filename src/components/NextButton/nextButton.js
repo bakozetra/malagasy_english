@@ -1,12 +1,8 @@
-// components/Task.js
 import * as React from 'react';
 import { StyleSheet, TouchableHighlight, View, Text } from 'react-native';
 
-
 const styles = StyleSheet.create({
     clickButton: {
-        fontFamily: "Inter",
-        fontWeight: "600",
         width: 90,
         height: 40,
         alignItems: "center",
@@ -18,9 +14,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 19,
     },
-    unclickButton: {
-        fontFamily: "Inter",
-        fontWeight: "600",
+    disableButton: {
         width: 90,
         height: 40,
         alignItems: "center",
@@ -42,25 +36,18 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 19,
     }
-
 })
 
-export default function NextButton({ onPress, title, disabled }) {
-    console.log(title);
+export default function NextButton({ onPress, text, disabled }) {
+    console.log(text);
     return (
-        <View style={disabled ? styles.unclickButton : styles.clickButton}>
+        <View style={disabled ? styles.disableButton : styles.clickButton}>
             <TouchableHighlight
                 onPress={onPress}
-                disabled={disabled}
-            >
-                <View >
-                    <Text
-                        style={disabled
-                            ? styles.blueText
-                            : styles.whiteText}>
-                        {title}
-                    </Text>
-                </View>
+                disabled={disabled}>
+                <Text style={disabled ? styles.blueText : styles.whiteText}>
+                    {text}
+                </Text>
             </TouchableHighlight>
         </View>
     )
