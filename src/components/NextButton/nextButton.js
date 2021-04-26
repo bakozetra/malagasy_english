@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet, TouchableHighlight, View, Text } from 'react-native';
 
 const styles = StyleSheet.create({
+
     clickButton: {
         width: 90,
         height: 40,
@@ -25,7 +26,6 @@ const styles = StyleSheet.create({
         borderColor: "blue",
         borderWidth: 1,
     },
-
     whiteText: {
         color: "#FFFFFF",
         fontSize: 16,
