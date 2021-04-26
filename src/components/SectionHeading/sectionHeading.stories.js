@@ -6,4 +6,4 @@ import SectionHeading from './sectionHeading';
 
 storiesOf('SectionHeading', module)
     .addDecorator(story => <View style={{ paddingLeft: 23 }}>{story()}</View>)
-    .add('Section heading', () => <SectionHeading text='select a category' />)
+    .add('Section heading', () => <SectionHeading text='Select a category:' />)
