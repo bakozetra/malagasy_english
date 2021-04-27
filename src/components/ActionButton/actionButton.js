@@ -1,13 +1,24 @@
-import * as React from "react"
-import { SafeAreaView } from "react-native"
-import { Text, SafeAreaView } from "react-native"
+import * as React from 'react';
+import { Text, View, StyleSheet, TouchableHighlight } from 'react-native';
 
-export default function ActionButton({ text }) {
-    console.log(text);
+const styles = StyleSheet.create({
+    text: {
+        fontSize: 16,
+        position: "absolute",
+        top: 10,
+        right: 10
+    },
+})
+
+export default function ActionButton({ text, Svg, color, onPress }) {
     return (
-        <SafeAreaView>
-            <Text>{text}</Text>
-        </SafeAreaView>
-    )
+        <View>
+            <TouchableHighlight style={styles.pressButton} onPress={onPress}>
+                <Text style={styles.text} color={color}>
+                    {text ? text : ''}
+                    {Svg ? <Svg /> : null}
+                </Text>
+            </TouchableHighlight>
+        </View>
+    );
 }
-
