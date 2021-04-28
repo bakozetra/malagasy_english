@@ -14,21 +14,27 @@ storiesOf('ActionButton', module)
         () =>
             <ActionButtton
                 text="Learn"
-                color={"red"}
+                color="rgba(6, 182, 212, 1)"
                 Svg={VectorIcon}
-                onPress={() => Alert} />)
+                onPress={() => Alert.alert("clicked")} />)
     .add('Pick icon',
         () =>
             <ActionButtton
                 text="Pick"
-                Svg={VectorIcon} />)
+                color="rgba(6, 182, 212, 1)"
+                Svg={VectorIcon}
+                onPress={() => Alert.alert("I was clcked")} />)
     .add('True icon',
         () =>
             <ActionButtton
-                text="correct"
-                Svg={TrueIcon} />)
+                text="Correct"
+                color="rgba(6, 212, 64, 1)"
+                Svg={TrueIcon}
+                onPress={() => Alert.alert("true")} />)
     .add('Wrong icon',
         () =>
             <ActionButtton
-                text="wrong"
-                Svg={wrongIcon} />)
+                text="Wrong"
+                color="rgba(212, 6, 142, 1)"
+                Svg={wrongIcon}
+                onPress={() => Alert.alert("wrong")} />)

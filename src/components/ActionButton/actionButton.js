@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableHighlight } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 const styles = StyleSheet.create({
     content: {
@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
 export default function ActionButton({ text, Svg, color, onPress }) {
     return (
         <View>
-            <TouchableHighlight style={styles.pressButton} onPress={onPress}>
+            <TouchableOpacity style={styles.pressButton} onPress={onPress} >
                 <View style={styles.content} >
-                    <Text style={styles.text} color={color}>
-                        {text ? text : ''}
+                    <Text style={[styles.text, color = { color }]} >
+                        {text}
                     </Text>
-                    {Svg ? <Svg marginLeft={10} /> : null}
+                    <Svg marginLeft={10} marginRight={20} />
                 </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </View>
     );
 }
