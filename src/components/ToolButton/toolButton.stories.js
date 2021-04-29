@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { View, Alert } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
@@ -12,9 +11,9 @@ import AddIcon from "../../svg/add"
 
 storiesOf('ToolButon', module)
     .addDecorator(story => <View>{story()}</View>)
-    .add('Add icon', () => <ToolButton OnPress={() => Alert.alert("add-icon")} Icon={AddIcon} />)
-    .add('Done', () => <ToolButton Icon={DoneIcon} />)
-    .add('Double icon', () => <ToolButton Icon={DoubleIcon} />)
-    .add('Next icon', () => <ToolButton Icon={NextIcon} />)
-    .add('Sun icon', () => <ToolButton Icon={SunIcon} />)
+    .add('Add icon', () => <ToolButton Icon={AddIcon} onPress={() => Alert.alert("add-icon")} />)
+    .add('Done', () => <ToolButton Icon={DoneIcon} onPress={() => Alert.alert("done")} />)
+    .add('Double icon', () => <ToolButton Icon={DoubleIcon} onPress={() => Alert.alert("double-icon")} />)
+    .add('Next icon', () => <ToolButton Icon={NextIcon} onPress={() => Alert.alert("next-icon")} />)
+    .add('Sun icon', () => <ToolButton Icon={SunIcon} onPress={() => Alert.alert("snu-icon")} />)
 

@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function ToolButton({ Icon, OnPress }) {
+export default function ToolButton({ Icon, onPress }) {
     return (
         <View >
-            <TouchableOpacity OnPress={OnPress} >
+            <TouchableOpacity onPress={onPress} >
                 <View style={styles.circle}>
                     <Icon />
                 </View>
