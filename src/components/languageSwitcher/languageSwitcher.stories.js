@@ -22,12 +22,5 @@ function Languages() {
 }
 storiesOf('LanguageSwitcher', module)
     .addDecorator(story => <View>{story()}</View>)
-    .add('short',
-        () => <LanguageSwitcher
-            gasy={language.gasy}
-            english={language.english}
-            SwitchIcon={SwitchIcon}
-            onPress={() => language}
-        />)
-    .add("test", () => <Languages></Languages>)
+    .add("languages switcher", () => <Languages></Languages>)
 
