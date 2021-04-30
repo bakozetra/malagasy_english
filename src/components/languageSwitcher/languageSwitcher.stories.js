@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import LanguageSwitcher from './languageSwitcher';
 import SwitchIcon from "../../svg/translate"
@@ -9,18 +9,15 @@ const language = {
     english: "EN"
 }
 function Languages() {
-    const [language, setLanguage] = React.useState("EN");
-
+    const [toggle, setToggle] = React.useState(true);
     return (
 
         <LanguageSwitcher
-            gasy={language !== "EN" ? <Text>MA</Text> : <Text>EN</Text>}
-            english={language == "EN" ? <Text>EN</Text> : <Text>EN</Text>}
+            english={toggle ? <Text>EN</Text> : <Text>MA</Text>}
+            gasy={!toggle ? <Text>EN</Text> : <Text>MA</Text>}
             SwitchIcon={SwitchIcon}
-            onPress={() => setLanguage(!language)}
+            onPress={() => setToggle(!toggle)}
         />
-
-
     )
 }
 storiesOf('LanguageSwitcher', module)
