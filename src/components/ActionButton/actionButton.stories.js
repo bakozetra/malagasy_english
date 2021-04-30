@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Alert, View } from 'react-native';
-
 import { storiesOf } from '@storybook/react-native';
 
 import ActionButtton from './actionButton';
