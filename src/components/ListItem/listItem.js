@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, SafeAreaView, View, StyleSheet, TouchableHighlight } from 'react-native'
+import { Text, SafeAreaView, View, StyleSheet, TouchableHighlight, TouchableOpacity } from 'react-native'
 import ActionButton from '../ActionButton/actionButton';
 
 const styles = StyleSheet.create({
@@ -20,18 +20,19 @@ const styles = StyleSheet.create({
 export default function ListItem({ name, Svg, color, onPress, text }) {
     return (
         <SafeAreaView >
-            <TouchableHighlight onPress={onPress}>
-                <View style={styles.listItem} >
+            <TouchableOpacity>
+                <View style={styles.listItem}>
                     <Text>{name}</Text>
-                    <ActionButton
-                        text={text}
-                        Svg={Svg}
-                        color={color}
-                        onPress={onPress}
-                    />
+                    <TouchableHighlight onPress={onPress}>
+                        <ActionButton
+                            text={text}
+                            Svg={Svg}
+                            color={color}
+                            onPress={onPress}
+                        />
+                    </TouchableHighlight>
                 </View>
-            </TouchableHighlight>
-
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }
