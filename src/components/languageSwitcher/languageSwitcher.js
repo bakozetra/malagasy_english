@@ -13,17 +13,20 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-around",
 
+
     },
     malagasyLanguage: {
         marginRight: 10,
         color: "white",
         fontSize: 13,
+        textTransform: "uppercase"
 
     },
     englishLanguage: {
         marginLeft: 10,
         color: "white",
-        fontSize: 13
+        fontSize: 13,
+        textTransform: "uppercase"
     }
 
 })
