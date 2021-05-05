@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, SafeAreaView, StyleSheet } from 'react-native';
+import { Text, SafeAreaView, StyleSheet, } from 'react-native';
 
 export default function SectionHeading({ heading }) {
     console.log(heading);
