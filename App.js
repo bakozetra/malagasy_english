@@ -21,7 +21,8 @@ const App = () => {
     <CategoriesProvider>
       <NavigationContainer>
         <Stack.Navigator
-          screenOptions={{ headerShown: false }}>
+          screenOptions={{ headerShown: false }}
+        >
           <Stack.Screen name="HomeScreen" component={HomeSreen} />
           <Stack.Screen name="Details" component={ItemDetails} />
         </Stack.Navigator>
