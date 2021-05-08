@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import ToolButton from '../components/ToolButton/toolButton';
 import SunIcon from "../svg/sun-icon"
@@ -41,39 +41,32 @@ const styles = StyleSheet.create({
     }
 })
 
-const ItemDetails = ({ route }) => {
+const LearningScreen = ({ route }) => {
     const { itemId, category, phaseCategories, } = route.params;
     const { filterPhaseById } = useContext(useContextCategories)
     const [phraseRandomly, setPhraseRandomly] = useState([]);
     const [getTextPhrase, setgetTextPhrase] = useState([]);
-    const [getCategoriesId, setGetCategoriesId] = useState("")
     const [isCorrect, setCorrect] = useState(false)
-
-
     function checkTheAnswer(id) {
         if (getTextPhrase[0]?.id === id) {
-            console.log("I am true");
+            console.log("true");
+            setCorrect(!isCorrect)
         } else {
+            setCorrect(isCorrect)
             console.log("wrong");
         }
     }
 
-
-
     function randomly() {
         const categoriesId = itemId[Math.floor(Math.random() * itemId.length)];
-        console.log(categoriesId, "id");
-        setGetCategoriesId(categoriesId)
         const categorieeId1 = phaseCategories[Math.floor(Math.random() * phaseCategories.length)];
         const categoriesId2 = phaseCategories[Math.floor(Math.random() * phaseCategories.length)];
         const categoriesId3 = phaseCategories[Math.floor(Math.random() * phaseCategories.length)]
         const getTextFiltered = filterPhaseById(categoriesId)
-        console.log(getTextFiltered[0].id, "getTextFiltered");
-        console.log(getTextFiltered, "getTextFiltered");
         const filterPrases = phaseCategories.filter(ids => ids.id === categoriesId)
         setgetTextPhrase(filterPrases)
         let randomOptions = [
-            { name: getTextFiltered[0].name.en, id: getTextFiltered[0].id },
+            { name: getTextFiltered[0].name.mg, id: getTextFiltered[0].id },
             { name: categorieeId1.name.mg, id: categorieeId1.id },
             { name: categoriesId2.name.mg, id: categoriesId2.id },
             { name: categoriesId3.name.mg, id: categoriesId2.id }
@@ -81,11 +74,6 @@ const ItemDetails = ({ route }) => {
         randomOptions.sort(() => { return 0.5 - Math.random() });
         setPhraseRandomly(randomOptions)
     }
-
-
-    console.log(getTextPhrase, "teeee");
-    console.log(phraseRandomly, "tesss");
-
     useEffect(() => {
         randomly()
     }, [])
@@ -112,13 +100,15 @@ const ItemDetails = ({ route }) => {
             <View>
                 {phraseRandomly.map(text => {
                     return (
-                        <ListItem
-                            text="Pick"
-                            Svg={VectorIcon}
-                            color="blue"
-                            name={text.name}
-                            onPress={() => checkTheAnswer(text.id)}
-                        />
+                        <View key={text.id}>
+                            <ListItem
+                                text={"Pick"}
+                                Svg={VectorIcon}
+                                color={blue}
+                                name={text.name}
+                                onPress={() => checkTheAnswer(text.id)}
+                            />
+                        </View>
                     )
                 })}
             </View>
@@ -126,4 +116,4 @@ const ItemDetails = ({ route }) => {
     )
 }
 
-export default ItemDetails
+export default LearningScreen
