@@ -8,7 +8,8 @@ import DoneIcon from "../svg/done"
 import AddIcon from "../svg/add"
 import SwitchIcon from "../svg/translate"
 import LanguageSwitcher from "../components/languageSwitcher/languageSwitcher"
-import { LANGUAGE_NAMES } from "../data/dataUtils"
+import { LANGUAGE_NAMES } from "../data/dataUtils";
+
 
 
 const styles = StyleSheet.create({
@@ -35,6 +36,7 @@ const HomeSreen = () => {
             />
         )
     }
+
 
     return (
         <SafeAreaView>
