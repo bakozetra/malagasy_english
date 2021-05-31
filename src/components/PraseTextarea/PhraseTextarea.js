@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     color: '#111827',
   },
   textarea: {
+    //longer text should stay centered as well, editable text font size seems to be way smaller
     color: '#111827',
     maxWidth: 360,
     marginHorizontal: 'auto',
