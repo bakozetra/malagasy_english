@@ -10,7 +10,7 @@ import SwitchIcon from "../svg/translate"
 import LanguageSwitcher from "../components/languageSwitcher/languageSwitcher"
 import { LANGUAGE_NAMES } from "../data/dataUtils"
 
-
+// Functionality is not a good folder name, something like screens or pages would be better
 const styles = StyleSheet.create({
     iconList: {
         display: "flex",
@@ -23,8 +23,10 @@ const styles = StyleSheet.create({
     },
 
 })
+// Homesreen != Homescreen
 const HomeSreen = () => {
     function Languages() {
+        // Toggle should be more descriptive (What is toggled?)
         const [toggle, setToggle] = React.useState(true);
         return (
             <LanguageSwitcher

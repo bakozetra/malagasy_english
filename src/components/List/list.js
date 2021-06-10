@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { SafeAreaView, SectionList, View, StyleSheet } from 'react-native';
 import ListItem from "../ListItem/listItem"
-import SectionHeading from "../SectionHeading/sectionHeading"
+import SectionHeading from "../SectionHeading/sectionHeading" // The section heading is not part of the list
 import VectorIcon from '../../svg/vector';
 import { useContextCategories } from '../../Context/GlobalContext';
 import { useNavigation } from '@react-navigation/native';
@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
     },
 })
 
-
+// Lists are used in more places than just for showing categories, for example for the answer options on the learning screen. The component should be less specific and get more data from props. 
+// The storybook component does not seem to be up-to-date.
 export default function List() {
     const navigation = useNavigation();
     const { categories } = React.useContext(useContextCategories)

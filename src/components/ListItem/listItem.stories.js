@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, Text, Alert } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import ListItem from './listItem';
-import VectorIcon from '../../svg/vector';
+import VectorIcon from '../../svg/vector'; // Vector icon is not a good name, as it does not make clear that it is an arrow
 
 
 storiesOf('ListItem', module)
